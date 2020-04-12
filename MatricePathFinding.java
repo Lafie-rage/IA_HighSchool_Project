@@ -13,8 +13,10 @@ public class MatricePathFinding {
   public static Path findPathTo(Case e, Case s, Case[] tableau) {
     // Dijkstra
 
-    System.out.println(e.x + " : " + e.y);
-    System.out.println(s.x + " : " + s.y);
+    for (Case c : tableau) {
+      c.parcouru = Integer.MAX_VALUE;
+      c.previous = null;
+    }
 
     ArrayList<Case> remainingCases = new ArrayList<Case>();
     ArrayList<Case> validCases = new ArrayList<Case>();
